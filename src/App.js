@@ -1,17 +1,20 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+import { Route } from "react-router-dom";
+import PlaceList from "./components/PlaceList";
+import Home from "./components/Home";
+import PlaceDetail from "./components/PlaceDetail";
 
 const App = () => {
-  const [places, setPlaces] = useState(null);
-  useEffect = () => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get();
-      } catch (e) {
-        console.log(e);
-      }
-    };
-  };
+  return (
+    <div>
+      <Route path="/" component={Home} />
+      <Route
+        path="/list/:areaCode/:sigunguCode/:contentTypeId"
+        component={PlaceList}
+      />
+      <Route path="/detail/:contentid" component={PlaceDetail} />
+    </div>
+  );
 };
 
 export default App;
