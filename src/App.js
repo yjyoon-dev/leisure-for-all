@@ -6,12 +6,9 @@ import PlaceDetail from "./components/PlaceDetail";
 
 const App = () => {
   return (
-    <div>
+    <div className="App">
       <Route path="/" component={Home} />
-      <Route
-        path="/list/:areaCode/:sigunguCode/:contentTypeId"
-        component={PlaceList}
-      />
+      <Route path="/list/:areaCode/:contentTypeId" component={PlaceList} />
       <Route path="/detail/:contentid" component={PlaceDetail} />
     </div>
   );

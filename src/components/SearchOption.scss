@@ -1,0 +1,17 @@
+.SearchOption {
+  background: rgb(18, 32, 39);
+  display: flex;
+  height: 2rem;
+  input {
+    background: none;
+    color: white;
+    flex: 1;
+  }
+  button {
+    display: flex;
+    height: 2rem;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

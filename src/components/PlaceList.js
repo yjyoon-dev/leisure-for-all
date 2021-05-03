@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import PlaceListItem from "./PlaceListItem";
 import axios from "axios";
+import "./PlaceList.scss";
 
 const PlaceList = ({ match }) => {
-  const { areaCode, sigunguCode, contentTypeId } = match.params;
+  const { areaCode, contentTypeId } = match.params;
   const [places, setPlaces] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -12,7 +13,7 @@ const PlaceList = ({ match }) => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `http://api.visitkorea.or.kr/openapi/service/rest/KorWithService/areaBasedList?serviceKey=${process.env.REACT_APP_API_KEY}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=LeisureForAll&listYN=Y&arrange=A&contentTypeId=${contentTypeId}&areaCode=${areaCode}&sigunguCode=${sigunguCode}&_type=json`
+          `http://api.visitkorea.or.kr/openapi/service/rest/KorWithService/areaBasedList?serviceKey=${process.env.REACT_APP_API_KEY}&numOfRows=30&pageNo=1&MobileOS=ETC&MobileApp=LeisureForAll&listYN=Y&arrange=B&contentTypeId=${contentTypeId}&areaCode=${areaCode}&_type=json`
         );
         setPlaces(response.data.response.body.items.item);
       } catch (e) {
@@ -21,7 +22,7 @@ const PlaceList = ({ match }) => {
       setLoading(false);
     };
     fetchData();
-  }, [areaCode, sigunguCode, contentTypeId]);
+  }, [areaCode, contentTypeId]);
 
   if (loading) {
     return <h3>로딩 중 입니다...</h3>;

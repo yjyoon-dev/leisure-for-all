@@ -1,0 +1,27 @@
+.PlaceDetail {
+  width: 512px;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  max-height: 600px;
+  overflow-y: auto;
+  img {
+    width: 512px;
+  }
+
+  .info {
+    padding: 1rem;
+  }
+  .modifiedTime {
+    color: gray;
+    font-size: 0.7rem;
+  }
+  hr {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .subtitle {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+}
