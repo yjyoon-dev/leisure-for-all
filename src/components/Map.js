@@ -12,7 +12,7 @@ function NaverMapAPI({ mapy, mapx }) {
         marginTop: "1rem",
       }}
       defaultCenter={{ lat: mapy, lng: mapx }}
-      defaultZoom={16}
+      defaultZoom={17}
     >
       <Marker
         key={1}

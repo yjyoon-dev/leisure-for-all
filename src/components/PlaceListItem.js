@@ -6,9 +6,16 @@ const PlaceListItem = ({ place }) => {
   const { addr1, firstimage, title, contentid } = place;
   return (
     <Link className="PlaceListItem" to={`/detail/${contentid}`}>
-      <img src={firstimage} alt={title} />
+      <img
+        src={
+          firstimage !== null
+            ? firstimage
+            : "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        }
+        alt={title}
+      />
       <div className="info">
-        <h3>{title}</h3>
+        <h2>{title}</h2>
         <p>{addr1}</p>
       </div>
     </Link>

@@ -29,32 +29,27 @@ const PlaceDetail = ({ match }) => {
   }, [match]);
 
   if (!detail || !forAll) {
-    return <p>데이터를 로딩 중입니다...</p>;
+    return <p className="PlaceDetail">데이터를 로딩 중입니다...</p>;
   }
   return (
     <div className="PlaceDetail">
       <img src={detail.firstimage} alt={detail.title}></img>
       <div className="info">
         <h2>{detail.title}</h2>
-        <h5>
+        <h4>
           [{detail.zipcode}] {detail.addr1}
-        </h5>
-        <div
-          style={{ fontSize: "0.9rem" }}
-          dangerouslySetInnerHTML={{ __html: detail.homepage }}
-        />
-        <p style={{ fontSize: "0.8rem" }}>
-          Tel) {detail.tel ? detail.tel : "정보 없음"}
-        </p>
+        </h4>
+        <div dangerouslySetInnerHTML={{ __html: detail.homepage }} />
+        <p>Tel) {detail.tel ? detail.tel : "정보 없음"}</p>
         <hr />
         <span className="subtitle">개요</span>
         <p>
           <div
             dangerouslySetInnerHTML={{
-              __html: detail.overview.toString().substring(0, 500),
+              __html: detail.overview.toString().substring(0, 1000),
             }}
           ></div>
-          {detail.overview.toString().length > 500 ? "...(중략)" : ""}
+          {detail.overview.toString().length > 1000 ? "...(중략)" : ""}
         </p>
         <hr />
         <span className="subtitle">모두의 정보</span>
@@ -69,7 +64,7 @@ const PlaceDetail = ({ match }) => {
         <Review />
         <hr />
         <p className="modifiedTime">
-          최종 수정 일자: {detail.modifiedtime.toString()}
+          최종 업데이트 일자: {detail.modifiedtime.toString()}
         </p>
       </div>
     </div>
