@@ -9,16 +9,17 @@ const PlaceDetail = ({ match }) => {
   const { contentid } = match.params;
   const [detail, setDetail] = useState(null);
   const [forAll, setForAll] = useState(null);
-
+  const apiKey =
+    "95NE%2FyrFsX%2B4evKhO86ZvEug2V%2Bx1hy%2BDVWThu0Y%2BW80Nktg%2FioiAULFeZr43Ma96lnLLaKZUOW0r%2Bd2%2FLI1Kg%3D%3D";
   useEffect(() => {
     const fetchData = async () => {
       try {
         const resDetail = await axios.get(
-          `http://api.visitkorea.or.kr/openapi/service/rest/KorService/detailCommon?ServiceKey=${process.env.REACT_APP_API_KEY}&contentId=${contentid}&defaultYN=Y&firstImageYN=Y&addrinfoYN=Y&mapinfoYN=Y&overviewYN=Y&MobileOS=ETC&MobileApp=LeisureForAll&_type=json`
+          `//api.visitkorea.or.kr/openapi/service/rest/KorService/detailCommon?ServiceKey=${apiKey}&contentId=${contentid}&defaultYN=Y&firstImageYN=Y&addrinfoYN=Y&mapinfoYN=Y&overviewYN=Y&MobileOS=ETC&MobileApp=LeisureForAll&_type=json`
         );
         setDetail(resDetail.data.response.body.items.item);
         const resForAll = await axios.get(
-          `http://api.visitkorea.or.kr/openapi/service/rest/KorWithService/detailWithTour?serviceKey=${process.env.REACT_APP_API_KEY}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=LeisureForAll&contentId=${contentid}&_type=json`
+          `//api.visitkorea.or.kr/openapi/service/rest/KorWithService/detailWithTour?serviceKey=${apiKey}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=LeisureForAll&contentId=${contentid}&_type=json`
         );
         setForAll(resForAll.data.response.body.items.item);
       } catch (e) {
