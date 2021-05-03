@@ -14,7 +14,7 @@ const PlaceList = ({ match }) => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `//api.visitkorea.or.kr/openapi/service/rest/KorWithService/areaBasedList?serviceKey=${apiKey}&numOfRows=50&pageNo=1&listYN=Y&MobileOS=ETC&MobileApp=LeisureForAll&listYN=Y&arrange=B&contentTypeId=${contentTypeId}&areaCode=${areaCode}&_type=json`
+          `http://api.visitkorea.or.kr/openapi/service/rest/KorWithService/areaBasedList?serviceKey=${apiKey}&numOfRows=50&pageNo=1&listYN=Y&MobileOS=ETC&MobileApp=LeisureForAll&listYN=Y&arrange=B&contentTypeId=${contentTypeId}&areaCode=${areaCode}&_type=json`
         );
         setPlaces(response.data.response.body.items.item);
       } catch (e) {
