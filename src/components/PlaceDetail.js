@@ -14,11 +14,11 @@ const PlaceDetail = ({ match }) => {
     const fetchData = async () => {
       try {
         const resDetail = await axios.get(
-          `http://api.visitkorea.or.kr/openapi/service/rest/KorService/detailCommon?ServiceKey=${process.env.REACT_APP_API_KEY}&contentId=${contentid}&defaultYN=Y&firstImageYN=Y&addrinfoYN=Y&mapinfoYN=Y&overviewYN=Y&MobileOS=ETC&MobileApp=LeisureForAll&_type=json`
+          `//api.visitkorea.or.kr/openapi/service/rest/KorService/detailCommon?ServiceKey=${process.env.REACT_APP_API_KEY}&contentId=${contentid}&defaultYN=Y&firstImageYN=Y&addrinfoYN=Y&mapinfoYN=Y&overviewYN=Y&MobileOS=ETC&MobileApp=LeisureForAll&_type=json`
         );
         setDetail(resDetail.data.response.body.items.item);
         const resForAll = await axios.get(
-          `http://api.visitkorea.or.kr/openapi/service/rest/KorWithService/detailWithTour?serviceKey=${process.env.REACT_APP_API_KEY}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=LeisureForAll&contentId=${contentid}&_type=json`
+          `//api.visitkorea.or.kr/openapi/service/rest/KorWithService/detailWithTour?serviceKey=${process.env.REACT_APP_API_KEY}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=LeisureForAll&contentId=${contentid}&_type=json`
         );
         setForAll(resForAll.data.response.body.items.item);
       } catch (e) {
