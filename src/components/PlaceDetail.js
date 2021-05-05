@@ -59,7 +59,7 @@ const PlaceDetail = ({ match }) => {
         </ul>
         <hr />
         <span className="subtitle">주변 지도</span>
-        <Map mapx={detail.mapx} mapy={detail.mapy} />
+
         <hr />
         <span className="subtitle">후기</span>
         <Review />
