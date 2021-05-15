@@ -18,3 +18,24 @@
   align-items: center;
   justify-content: center;
 }
+
+.logo {
+  height: 32px;
+  margin: 16px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.1s color ease-in;
+  &:hover {
+    color: rgb(32, 147, 241);
+  }
+}
+.site-layout .site-layout-background {
+  background: #fff;
+}
+[data-theme="dark"] .site-layout .site-layout-background {
+  background: #141414;
+}

@@ -9,17 +9,15 @@ const PlaceDetail = ({ match }) => {
   const { contentid } = match.params;
   const [detail, setDetail] = useState(null);
   const [forAll, setForAll] = useState(null);
-  const apiKey =
-    "95NE%2FyrFsX%2B4evKhO86ZvEug2V%2Bx1hy%2BDVWThu0Y%2BW80Nktg%2FioiAULFeZr43Ma96lnLLaKZUOW0r%2Bd2%2FLI1Kg%3D%3D";
   useEffect(() => {
     const fetchData = async () => {
       try {
         const resDetail = await axios.get(
-          `http://api.visitkorea.or.kr/openapi/service/rest/KorService/detailCommon?ServiceKey=${apiKey}&contentId=${contentid}&defaultYN=Y&firstImageYN=Y&addrinfoYN=Y&mapinfoYN=Y&overviewYN=Y&MobileOS=ETC&MobileApp=LeisureForAll&_type=json`
+          `http://api.visitkorea.or.kr/openapi/service/rest/KorService/detailCommon?ServiceKey=${process.env.REACT_APP_API_KEY}&contentId=${contentid}&defaultYN=Y&firstImageYN=Y&addrinfoYN=Y&mapinfoYN=Y&overviewYN=Y&MobileOS=ETC&MobileApp=LeisureForAll&_type=json`
         );
         setDetail(resDetail.data.response.body.items.item);
         const resForAll = await axios.get(
-          `http://api.visitkorea.or.kr/openapi/service/rest/KorWithService/detailWithTour?serviceKey=${apiKey}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=LeisureForAll&contentId=${contentid}&_type=json`
+          `http://api.visitkorea.or.kr/openapi/service/rest/KorWithService/detailWithTour?serviceKey=${process.env.REACT_APP_API_KEY}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=LeisureForAll&contentId=${contentid}&_type=json`
         );
         setForAll(resForAll.data.response.body.items.item);
       } catch (e) {
@@ -30,7 +28,11 @@ const PlaceDetail = ({ match }) => {
   }, [match]);
 
   if (!detail || !forAll) {
-    return <p className="PlaceDetail">데이터를 로딩 중입니다...</p>;
+    return (
+      <p className="PlaceDetail">
+        <center>데이터를 로딩 중입니다...</center>
+      </p>
+    );
   }
   return (
     <div className="PlaceDetail">
@@ -59,7 +61,7 @@ const PlaceDetail = ({ match }) => {
         </ul>
         <hr />
         <span className="subtitle">주변 지도</span>
-
+        <Map mapx={detail.mapx} mapy={detail.mapy} />
         <hr />
         <span className="subtitle">후기</span>
         <Review />

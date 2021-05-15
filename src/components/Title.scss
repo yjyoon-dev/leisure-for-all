@@ -1,0 +1,58 @@
+.img {
+  position: relative;
+  background-image: url(https://cdn.pixabay.com/photo/2015/05/02/14/05/wheelchair-749985_960_720.jpg);
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    z-index: 2;
+    text-align: center;
+  }
+}
+
+.img-cover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.selectText {
+  font-size: 1.2rem;
+}
+
+.btnList {
+  display: flex;
+  width: 650px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.placeBtn {
+  border: 1px solid white;
+  border-radius: 32px;
+  font-size: 0.9rem;
+  padding: 10px;
+  margin: 10px;
+  transition-property: color, background;
+  transition-timing-function: ease-in;
+  transition-duration: 0.1s;
+  cursor: pointer;
+  background: none;
+  color: white;
+  text-decoration: none;
+  &:hover {
+    color: black;
+    background: white;
+  }
+}
