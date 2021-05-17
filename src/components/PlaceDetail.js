@@ -9,15 +9,16 @@ const PlaceDetail = ({ match }) => {
   const { contentid } = match.params;
   const [detail, setDetail] = useState(null);
   const [forAll, setForAll] = useState(null);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const resDetail = await axios.get(
-          `http://api.visitkorea.or.kr/openapi/service/rest/KorService/detailCommon?ServiceKey=${process.env.REACT_APP_API_KEY}&contentId=${contentid}&defaultYN=Y&firstImageYN=Y&addrinfoYN=Y&mapinfoYN=Y&overviewYN=Y&MobileOS=ETC&MobileApp=LeisureForAll&_type=json`
+          `http://api.visitkorea.or.kr/openapi/service/rest/KorService/detailCommon?ServiceKey=${process.env.REACT_APP_OPEN_API_KEY}&contentId=${contentid}&defaultYN=Y&firstImageYN=Y&addrinfoYN=Y&mapinfoYN=Y&overviewYN=Y&MobileOS=ETC&MobileApp=LeisureForAll&_type=json`
         );
         setDetail(resDetail.data.response.body.items.item);
         const resForAll = await axios.get(
-          `http://api.visitkorea.or.kr/openapi/service/rest/KorWithService/detailWithTour?serviceKey=${process.env.REACT_APP_API_KEY}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=LeisureForAll&contentId=${contentid}&_type=json`
+          `http://api.visitkorea.or.kr/openapi/service/rest/KorWithService/detailWithTour?serviceKey=${process.env.REACT_APP_OPEN_API_KEY}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=LeisureForAll&contentId=${contentid}&_type=json`
         );
         setForAll(resForAll.data.response.body.items.item);
       } catch (e) {
@@ -25,7 +26,7 @@ const PlaceDetail = ({ match }) => {
       }
     };
     fetchData();
-  }, [match]);
+  }, []);
 
   if (!detail || !forAll) {
     return (
@@ -64,7 +65,7 @@ const PlaceDetail = ({ match }) => {
         <Map mapx={detail.mapx} mapy={detail.mapy} />
         <hr />
         <span className="subtitle">후기</span>
-        <Review />
+        <Review contentid={contentid} />
         <hr />
         <p className="modifiedTime">
           최종 업데이트 일자: {detail.modifiedtime.toString()}

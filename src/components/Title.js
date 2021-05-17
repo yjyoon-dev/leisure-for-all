@@ -6,10 +6,12 @@ const Title = () => {
   return (
     <div className="img">
       <div className="content">
-        <h4 style={{ marginBottom: "0px", color: "white" }}>
+        <h4 style={{ marginBottom: "0px", color: "white", fontWeight: "bold" }}>
           노약자와 장애인도 즐기는
         </h4>
-        <h1 style={{ marginTop: "0px", color: "white" }}>모두의 여가</h1>
+        <h1 style={{ marginTop: "0px", color: "white", fontWeight: "bold" }}>
+          모두의 여가
+        </h1>
         <p className="selectText">지역을 선택해주세요</p>
         <div className="btnList">
           <Link className="placeBtn" to={"/list/1/12"}>

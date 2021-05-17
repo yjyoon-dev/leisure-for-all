@@ -1,0 +1,16 @@
+.Reviews {
+  margin-top: 1rem;
+}
+.ReviewForm {
+  margin-top: 2rem;
+  .ReviewInput {
+    display: flex;
+    Input {
+      width: 13rem;
+      margin-right: 0.5rem;
+    }
+  }
+  Button {
+    margin-top: 0.7rem;
+  }
+}

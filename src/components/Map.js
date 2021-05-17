@@ -26,7 +26,7 @@ function NaverMapAPI({ mapy, mapx }) {
 function Map({ mapy, mapx }) {
   return (
     <RenderAfterNavermapsLoaded
-      ncpClientId={`${process.env.REACT_APP_MAP_KEY}`}
+      ncpClientId={`${process.env.REACT_APP_NAVER_MAP_KEY}`}
       error={<p>Maps Load Error</p>}
       loading={<p>Maps Loading...</p>}
     >

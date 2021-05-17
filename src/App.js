@@ -4,6 +4,7 @@ import PlaceList from "./components/PlaceList";
 import PlaceDetail from "./components/PlaceDetail";
 import Title from "./components/Title";
 import ScrollToTop from "./ScrollToTop";
+import firebaseConfig from "./firebaseConfig";
 
 const App = () => {
   return (
