@@ -3,14 +3,20 @@
 }
 .ReviewForm {
   margin-top: 2rem;
-  .ReviewInput {
+  .NameOption {
     display: flex;
     Input {
       width: 13rem;
       margin-right: 0.5rem;
     }
   }
-  Button {
-    margin-top: 0.7rem;
+
+  .TextSubmit {
+    display: flex;
+    Button {
+      margin-left: 0.5rem;
+      height: 5rem;
+      width: 5rem;
+    }
   }
 }

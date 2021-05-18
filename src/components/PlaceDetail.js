@@ -4,8 +4,9 @@ import "./PlaceDetail.scss";
 import ForAllInfo from "./ForAllInfo";
 import Map from "./Map";
 import Review from "./Review";
+import { Button } from "antd";
 
-const PlaceDetail = ({ match }) => {
+const PlaceDetail = ({ match, history }) => {
   const { contentid } = match.params;
   const [detail, setDetail] = useState(null);
   const [forAll, setForAll] = useState(null);
@@ -28,6 +29,10 @@ const PlaceDetail = ({ match }) => {
     fetchData();
   }, []);
 
+  const goBack = () => {
+    history.goBack();
+  };
+
   if (!detail || !forAll) {
     return (
       <p className="PlaceDetail">
@@ -39,7 +44,9 @@ const PlaceDetail = ({ match }) => {
     <div className="PlaceDetail">
       <img src={detail.firstimage} alt={detail.title}></img>
       <div className="info">
-        <h2>{detail.title}</h2>
+        <h2>
+          <b>{detail.title}</b>
+        </h2>
         <h4>
           [{detail.zipcode}] {detail.addr1}
         </h4>
@@ -67,9 +74,10 @@ const PlaceDetail = ({ match }) => {
         <span className="subtitle">후기</span>
         <Review contentid={contentid} />
         <hr />
-        <p className="modifiedTime">
+        <div className="modifiedTime">
           최종 업데이트 일자: {detail.modifiedtime.toString()}
-        </p>
+          <Button onClick={goBack}>목록으로 돌아가기</Button>
+        </div>
       </div>
     </div>
   );

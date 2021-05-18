@@ -16,12 +16,14 @@
     padding: 1rem;
   }
   .modifiedTime {
+    display: flex;
+    justify-content: space-between;
     color: gray;
     font-size: 0.7rem;
   }
   hr {
     margin-top: 1.2rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
   }
   .subtitle {
     font-weight: bold;

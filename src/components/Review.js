@@ -24,7 +24,7 @@ const typeMap = {
 const Review = ({ contentid }) => {
   const [reviews, setReviews] = useState([]);
   const [type, setType] = useState("blind");
-  const [name, setName] = useState(null);
+  const [name, setName] = useState("익명");
   const [text, setText] = useState(null);
 
   useEffect(() => {
@@ -62,12 +62,16 @@ const Review = ({ contentid }) => {
   );
 
   const addReview = () => {
-    db.collection(`/${contentid}`).add({
-      name,
-      text,
-      type,
-    });
-    setReviews(reviews.concat({ name, text, type }));
+    if (!text) alert("후기 내용을 입력해주세요!");
+    else {
+      db.collection(`/${contentid}`).add({
+        name,
+        text,
+        type,
+      });
+      setReviews(reviews.concat({ name, text, type }));
+      setText(null);
+    }
   };
 
   return (
@@ -87,7 +91,7 @@ const Review = ({ contentid }) => {
         <div>해당 장소의 리뷰가 아직 없습니다. 직접 작성해보세요!</div>
       )}
       <div className="ReviewForm">
-        <p className="ReviewInput">
+        <p className="NameOption">
           <Input
             placeholder="닉네임을 입력해주세요"
             onChange={nameChangeHandler}
@@ -108,15 +112,17 @@ const Review = ({ contentid }) => {
             <Option value="etc">기타</Option>
           </Select>
         </p>
-        <TextArea
-          rows={4}
-          placeholder="내용을 입력해주세요"
-          onChange={textChangeHandler}
-          value={text}
-        />
-        <Button type="primary" onClick={addReview}>
-          작성
-        </Button>
+        <div className="TextSubmit">
+          <TextArea
+            rows={3}
+            placeholder="내용을 입력해주세요"
+            onChange={textChangeHandler}
+            value={text}
+          />
+          <Button type="primary" onClick={addReview}>
+            작성
+          </Button>
+        </div>
       </div>
     </div>
   );
