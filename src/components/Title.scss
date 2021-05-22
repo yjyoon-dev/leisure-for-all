@@ -1,3 +1,8 @@
+.Title {
+  display: flex;
+  flex-direction: column;
+}
+
 .img {
   position: relative;
   background-image: url(https://cdn.pixabay.com/photo/2015/05/02/14/05/wheelchair-749985_960_720.jpg);
@@ -66,4 +71,89 @@
     color: black;
     background: white;
   }
+}
+
+.Scroll {
+  padding-top: 60px;
+}
+.Scroll span {
+  position: absolute;
+  top: 40vh;
+  left: 50%;
+  width: 30px;
+  height: 50px;
+  margin-left: -15px;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+.Scroll span::before {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  background-color: #fff;
+  border-radius: 100%;
+  -webkit-animation: sdb 2s infinite;
+  animation: sdb 2s infinite;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb {
+  0% {
+    -webkit-transform: translate(0, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translate(0, 20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    transform: translate(0, 20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.About {
+  height: 82vh;
+  background: white;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.Footer {
+  height: 9vh;
+  background: gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: bold;
+  color: rgb(92, 92, 92);
+  p {
+    width: 33.333%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  margin-bottom: 0px;
 }
