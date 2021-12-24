@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# 모두의 여가
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![1](readme/1.png)
 
-## Available Scripts
+본 웹페이지는 한국관광공사에서 제공하는 Open API 를 통해
+지역별 각종 여가 장소의 장애 시설 관련 정보를 제공합니다.
+장소 유형에 따른 분류 기능을 제공하고 있으며 장애 관련 정보 뿐만 아니라
+장소에 대한 주소, 설명, 지도 등 다양한 기본 정보들도 제공합니다.
+그리고 장소별 후기 시스템을 통해 다양한 사람들의 장애별 방문 후기를 접할 수 있습니다.
+그동안 자신이 갖고 있는 제약사항 때문에 여가를 즐기기 망설이셨나요?
+이제 모두의 여가를 통해 다양한 장소들을 살펴보며 마음껏 즐겨보세요!😁
 
-In the project directory, you can run:
+<br>
 
-### `npm start`
+# 서비스
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 지역 및 카테고리 별 관광지
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![2](readme/2.png)
 
-### `npm test`
+지역 및 카테고리 별로 다양한 관광지를 한 눈에 쉽게 볼 수 있습니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 상세 관광지 정보
 
-### `npm run build`
+### 기본 정보 및 이미지
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![3](readme/3.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 관광지 개요
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![4](readme/4.png)
 
-### `npm run eject`
+### 무장애 정보
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![5](readme/5.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 주변 지도
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![6](readme/6.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 장애별 후기 공유
 
-## Learn More
+![7](readme/7.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# 기술
 
-### Code Splitting
+## 프론트엔드
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- `React`
+- `SCSS`
+- `HTML` / `Javascript`
 
-### Analyzing the Bundle Size
+## 서버 및 DB
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- `Firebase Database`
 
-### Making a Progressive Web App
+## API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- `Tour API`
+- `Naver Map API`
 
-### Advanced Configuration
+## 배포
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- `Google Cloud Platform`
 
-### Deployment
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# 소개 영상
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[유튜브 링크](https://youtu.be/clJt-OhWHOI)
