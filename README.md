@@ -46,22 +46,22 @@
 
 # 기술
 
-## 프론트엔드
+### 프론트엔드
 
 - `React`
 - `SCSS`
 - `HTML` / `Javascript`
 
-## 서버 및 DB
+### 서버 및 DB
 
 - `Firebase Database`
 
-## API
+### API
 
 - `Tour API`
 - `Naver Map API`
 
-## 배포
+### 배포
 
 - `Google Cloud Platform`
 
